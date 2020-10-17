@@ -4,7 +4,7 @@ const express = require('express')
 const app = express()
 
 app.get('', (req, res) => {
-    res.send('Hello express framework!')
+    res.send('<h1>Weather</h1>')
 });
 
 app.get('/help', (req, res) => {
