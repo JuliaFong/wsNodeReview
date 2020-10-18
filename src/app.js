@@ -8,8 +8,13 @@ app.get('', (req, res) => {
 });
 
 app.get('/help', (req, res) => {
-    res.send('Help page')
-    console.log('help page')
+    res.send({
+        name: 'Ben',
+        age: 99
+    }, {
+        name: 'Sandra'
+    })
+    
 })
 
 app.get('/about', (req, res) => {
