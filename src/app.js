@@ -21,7 +21,6 @@ hbs.registerPartials(partialsPath)
 app.use(express.static(publicDirectoryPath)) 
 
 
-
 app.get('', (req, res) => {
     res.render('index', {
         title: 'Weather App!',
@@ -52,36 +51,25 @@ app.get('/weather', (req, res) => {
     
 })
 
-app.get('/footer', (req, res) => {
-    res.render('footer', {
-       footer: 'this is a footer '
+app.get('/help/*', (req, res) => {
+    res.render('404', {
+        title: '404',
+        name: 'Andy',
+        errorMessage: "Help article not found."
+    })
+})
+
+app.get('*', (req, res) => {
+    res.render('404', {
+        title: '404',
+        name: 'Andrew',
+        errorMessage: 'Page not found.'
     })
 })
 
 app.listen(3000, () => {
     console.log("Servr is workingggg")
 })
-
-
-
-// app.get('', (req, res) => {
-//     res.send('<h1>Weather App</h1>')
-// });
-
-// app.get('/help', (req, res) => {
-//     res.send({
-//         name: 'Ben',
-//         age: 99
-//     }, {
-//         name: 'Sandra'
-//     })
-    
-// })
-
-// app.get('/about', (req, res) => {
-//     res.send('<h1>About</h1>')
- 
-// })
 
 
 //app.com
